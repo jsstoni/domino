@@ -36,3 +36,12 @@ $jugadores = array(
 	2 => array(),
 	3 => array()
 );
+
+for ($jugador=0; $jugador < 4; $jugador++) {
+	for ($cartas=0; $cartas < 7; $cartas++) {
+		$randoPieza = array_rand($piezas);
+		$carta = $piezas[$randoPieza];
+		unset($piezas[$randoPieza]);
+		array_push($jugadores[$jugador], $carta);
+	}
+}
