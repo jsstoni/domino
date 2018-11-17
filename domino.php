@@ -45,3 +45,10 @@ for ($jugador=0; $jugador < 4; $jugador++) {
 		array_push($jugadores[$jugador], $carta);
 	}
 }
+
+foreach ($jugadores as $key => $value) {
+	echo "Jugador".($key+1)."<br>";
+	foreach ($value as $piezas) {
+		echo $piezas[0]."-".$piezas[1]."<br>";
+	}
+}
