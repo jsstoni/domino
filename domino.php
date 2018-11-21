@@ -1,6 +1,6 @@
 <?php
 $piezas = array(
-	array(0, 0),
+	0 => array(0, 0),
 	array(1, 1),
 	array(2, 3),
 	array(3, 6),
@@ -30,6 +30,8 @@ $piezas = array(
 	array(6, 6)
 );
 
+$repartidas = array();
+
 $jugadores = array(
 	array(),
 	array(),
@@ -40,6 +42,7 @@ $jugadores = array(
 for ($jugador=0; $jugador < 4; $jugador++) {
 	for ($cartas=0; $cartas < 7; $cartas++) {
 		$randoPieza = array_rand($piezas);
+		$repartidas[$randoPieza] = $piezas[$randoPieza];
 		unset($piezas[$randoPieza]);
 		array_push($jugadores[$jugador], $randoPieza);
 	}
@@ -47,5 +50,10 @@ for ($jugador=0; $jugador < 4; $jugador++) {
 
 foreach ($jugadores as $key => $cartas) {
 	echo "Jugador ".($key+1)."<br>";
-	
+	for ($i=0; $i < count($cartas); $i++) {
+		echo $repartidas[$cartas[$i]][0]." . ".$repartidas[$cartas[$i]][1]."<br>";
+	}
 }
+
+echo "<pre>";
+echo "</pre>";
