@@ -1,6 +1,6 @@
 <?php
 $piezas = array(
-	0 => array(0, 0),
+	array(0, 0),
 	array(1, 1),
 	array(2, 3),
 	array(3, 6),
@@ -52,6 +52,15 @@ foreach ($jugadores as $key => $cartas) {
 	echo "Jugador ".($key+1)."<br>";
 	for ($i=0; $i < count($cartas); $i++) {
 		echo $repartidas[$cartas[$i]][0]." . ".$repartidas[$cartas[$i]][1]."<br>";
+	}
+}
+
+//Buscar doble cena
+for ($i=0; $i < count($jugadores); $i++) {
+	for ($e=0; $e < count($jugadores[$i]); $e++) {
+		if ($jugadores[$i][$e] == 27) {
+			echo "Jugador ".($i+1)." Empieza";
+		}
 	}
 }
 
